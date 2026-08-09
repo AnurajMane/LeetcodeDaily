@@ -1,6 +1,7 @@
 import React from "react";
-import { ExternalLink, Heart } from "lucide-react";
+import { ExternalLink, Flame, Heart } from "lucide-react";
 import { SiGithub } from "react-icons/si";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 import PageContainer from "./PageContainer";
@@ -16,26 +17,56 @@ function Footer() {
       <PageContainer>
         <div className="flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
 
-          {/* Footer Brand */}
+          {/* Footer Brand with Flame & Brackets Logo */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-2.5">
+            <Link to="/" className="group inline-flex items-center gap-2.5">
+              {/* Animated Flame Badge */}
               <motion.div
-                whileHover={{ rotate: 12, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="theme-accent-border theme-accent-background theme-accent flex h-8 w-8 items-center justify-center rounded-lg border text-xs font-bold shadow-sm"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--accent)]/30 bg-[var(--accent-background)] shadow-sm backdrop-blur-md"
               >
-                &lt;/&gt;
+                {/* Subtle ambient hover glow */}
+                <div className="absolute inset-0 rounded-xl bg-[var(--accent)]/15 blur-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="relative flex items-center justify-center font-mono font-bold text-xs text-[var(--accent)]">
+                  <span className="opacity-70 transition-transform duration-200 group-hover:-translate-x-0.5">
+                    &lt;
+                  </span>
+                  <motion.div
+                    animate={{ scale: [1, 1.15, 1] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  >
+                    <Flame className="h-4 w-4 fill-amber-500 text-amber-500" />
+                  </motion.div>
+                  <span className="opacity-70 transition-transform duration-200 group-hover:translate-x-0.5">
+                    &gt;
+                  </span>
+                </div>
               </motion.div>
 
-              <span className="theme-text-primary text-base font-bold tracking-tight">
-                DailyCode
-              </span>
-            </div>
+              {/* Brand Title & Subtitle */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="theme-text-primary text-base font-extrabold tracking-tight">
+                    Daily<span className="text-[var(--accent)]">Code</span>
+                  </span>
+                  <span
+                    className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                    title="Daily Streak Active"
+                  />
+                </div>
+                <span className="text-[10px] font-mono tracking-widest uppercase text-neutral-500 -mt-0.5">
+                  LeetCode Journal
+                </span>
+              </div>
+            </Link>
 
             <p className="theme-text-muted mt-3 max-w-md text-sm leading-6">
               One problem. One day. One better solution.
@@ -60,7 +91,7 @@ function Footer() {
               href="https://github.com/AnurajMane/LeetcodeDaily"
               target="_blank"
               rel="noreferrer"
-              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
             >
               <SiGithub className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
               <span>GitHub</span>
@@ -74,7 +105,7 @@ function Footer() {
               href="https://leetcode.com/u/Anurajmane02/"
               target="_blank"
               rel="noreferrer"
-              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
             >
               <span>LeetCode</span>
               <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

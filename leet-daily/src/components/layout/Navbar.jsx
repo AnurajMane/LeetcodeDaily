@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Flame, Menu, X } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
@@ -26,27 +26,57 @@ function Navbar() {
       <PageContainer>
         <nav className="flex h-16 items-center justify-between">
 
-          {/* Logo */}
+          {/* Logo Concept 1: Flame & Brackets (< 🔥 >) */}
           <Link
             to="/"
             onClick={closeMobileMenu}
             className="group flex items-center gap-2.5"
           >
+            {/* Animated Flame Icon Badge */}
             <motion.div
-              whileHover={{ rotate: 10, scale: 1.08 }}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="theme-accent-border theme-accent-background theme-accent flex h-8 w-8 items-center justify-center rounded-lg border shadow-xs"
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--accent)]/30 bg-[var(--accent-background)] shadow-xs backdrop-blur-md"
             >
-              <span className="text-xs font-bold">&lt;/&gt;</span>
+              {/* Subtle ambient hover glow */}
+              <div className="absolute inset-0 rounded-xl bg-[var(--accent)]/15 blur-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="relative flex items-center justify-center font-mono text-xs font-bold text-[var(--accent)]">
+                <span className="opacity-70 transition-transform duration-200 group-hover:-translate-x-0.5">
+                  &lt;
+                </span>
+                <motion.div
+                  animate={{ scale: [1, 1.15, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="flex items-center justify-center"
+                >
+                  <Flame className="h-4 w-4 fill-amber-500 text-amber-500 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
+                </motion.div>
+                <span className="opacity-70 transition-transform duration-200 group-hover:translate-x-0.5">
+                  &gt;
+                </span>
+              </div>
             </motion.div>
 
-            <span className="theme-text-primary text-sm font-bold tracking-tight sm:text-base">
-              DailyCode
-            </span>
+            {/* Brand Title & Subtitle */}
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5">
+                <span className="theme-text-primary text-base font-extrabold tracking-tight">
+                  Daily<span className="text-[var(--accent)]">Code</span>
+                </span>
+                <span
+                  className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                  title="Daily streak active"
+                />
+              </div>
+              <span className="text-[9px] font-mono font-medium tracking-widest uppercase text-neutral-500 -mt-0.5">
+                LeetCode Journal
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation with Animated Sliding Active Indicator */}
+          {/* Desktop Navigation with Animated Active Pill */}
           <div className="hidden items-center gap-1 md:flex">
             {navigationItems.map((item) => {
               const isActive = location.pathname === item.path;
@@ -58,12 +88,12 @@ function Navbar() {
                   className={({ isActive }) =>
                     `relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                       isActive
-                        ? "theme-text-primary"
+                        ? "theme-text-primary font-semibold"
                         : "theme-text-secondary hover:text-[var(--text-primary)]"
                     }`
                   }
                 >
-                  {/* Sliding Active Background Pill */}
+                  {/* Sliding Active Background Highlight */}
                   {isActive && (
                     <motion.div
                       layoutId="activeNavPill"
@@ -167,7 +197,7 @@ function Navbar() {
 
                   <div className="theme-border my-2 border-t" />
 
-                  {/* Mobile Actions */}
+                  {/* Mobile Theme Toggle Row */}
                   <div className="flex items-center justify-between px-4 py-2">
                     <span className="theme-text-secondary text-sm font-medium">
                       Theme
@@ -175,6 +205,7 @@ function Navbar() {
                     <ThemeToggle />
                   </div>
 
+                  {/* Mobile GitHub Action */}
                   <a
                     href="https://github.com/AnurajMane/LeetcodeDaily"
                     target="_blank"
