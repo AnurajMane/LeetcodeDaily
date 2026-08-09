@@ -1,8 +1,12 @@
+import PageContainer from "../components/layout/PageContainer";
+
 function About() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">About</h1>
-    </div>
+    <PageContainer className="py-20">
+      <h1 className="theme-text-primary text-4xl font-bold">
+        About
+      </h1>
+    </PageContainer>
   );
 }
 
