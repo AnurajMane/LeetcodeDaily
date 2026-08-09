@@ -1,18 +1,34 @@
-import PageContainer from "../components/layout/PageContainer";
+import Hero from "../components/home/Hero";
+import DailyProblem from "../components/home/DailyProblem";
+import RecentProblems from "../components/home/RecentProblems";
+import Stats from "../components/home/Stats";
+
+import problems from "../data/problems";
+import {
+  getLatestProblem,
+  getProblemStats,
+} from "../lib/problemUtils";
 
 function Home() {
+  const latestProblem = getLatestProblem(problems);
+  const stats = getProblemStats(problems);
+
   return (
-    <PageContainer className="py-20">
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <h1 className="theme-text-primary text-center text-4xl font-bold tracking-tight sm:text-6xl">
-          One Problem.
-          <br />
-          One Day.
-          <br />
-          One Better Solution.
-        </h1>
-      </div>
-    </PageContainer>
+    <main>
+      <Hero />
+
+      <DailyProblem
+        problem={latestProblem}
+      />
+
+      <Stats
+        stats={stats}
+      />
+
+      <RecentProblems
+        problems={problems}
+      />
+    </main>
   );
 }
 

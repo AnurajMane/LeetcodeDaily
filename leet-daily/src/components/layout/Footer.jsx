@@ -32,7 +32,7 @@ function Footer() {
           <div className="flex items-center gap-3">
 
             <a
-              href="https://github.com"
+              href="https://github.com/AnurajMane/LeetcodeDaily"
               target="_blank"
               rel="noreferrer"
               className="theme-text-secondary theme-surface theme-border theme-surface-hover inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition hover:text-[var(--text-primary)]"
@@ -42,7 +42,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://leetcode.com"
+              href="https://leetcode.com/u/Anurajmane02/"
               target="_blank"
               rel="noreferrer"
               className="theme-text-secondary theme-surface theme-border theme-surface-hover inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition hover:text-[var(--text-primary)]"

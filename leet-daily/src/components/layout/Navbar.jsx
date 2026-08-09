@@ -74,7 +74,7 @@ function Navbar() {
             <ThemeToggle />
 
             <a
-              href="https://github.com"
+              href="https://github.com/AnurajMane/LeetcodeDaily"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -135,7 +135,7 @@ function Navbar() {
 
               {/* Mobile GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/AnurajMane/LeetcodeDaily"
                 target="_blank"
                 rel="noreferrer"
                 onClick={closeMobileMenu}
