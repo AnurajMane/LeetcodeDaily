@@ -42,6 +42,7 @@ Otherwise, store the current value and its index.
 
 ## Solution
 
+```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
 
@@ -64,6 +65,7 @@ class Solution {
         return new int[] {};
     }
 }
+```
 
 ## Complexity
 

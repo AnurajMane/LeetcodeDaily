@@ -29,15 +29,13 @@ true
 ## Approach
 
 Use a stack.
-
 When an opening bracket appears, push it onto the stack.
-
 When a closing bracket appears, check whether it matches the most
 recent opening bracket.
----
+
 
 ## Solution
-```text
+```java
 class Solution {
     public boolean isValid(String s) {
 
@@ -73,18 +71,15 @@ class Solution {
     }
 }
 ```
----
+
 ## Complexity
 ```text
 Time: O(n)
 
 Space: O(n)
 ```
----
 
 ## Key Takeaway
 
 A stack naturally matches the last opened bracket with the next
 closing bracket.
-
----
