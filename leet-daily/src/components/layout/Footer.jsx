@@ -1,10 +1,18 @@
 import React from "react";
 import { ExternalLink, Flame, Heart } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiLeetcode } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 import PageContainer from "./PageContainer";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FiLinkedin } from "react-icons/fi";
+
+const socialLinks = [
+  // { icon: FaGithub, href: import.meta.env.VITE_SOCIAL_GITHUB, label: "GitHub" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/anurajmane/", label: "LinkedIn" },
+  { icon: FaTwitter, href: "#", label: "Twitter" },
+];
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -75,48 +83,66 @@ function Footer() {
             </p>
           </motion.div>
 
-          {/* Footer Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-3"
-          >
-            {/* GitHub Link */}
-            <motion.a
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              href="https://github.com/AnurajMane/LeetcodeDaily"
-              target="_blank"
-              rel="noreferrer"
-              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+          <div className="flex">
+            {/* Footer Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3"
             >
-              <SiGithub className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
-              <span>GitHub</span>
-            </motion.a>
+              {/* GitHub Link */}
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                href="https://github.com/AnurajMane/"
+                target="_blank"
+                rel="noreferrer"
+                className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+              >
+                <SiGithub className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+                <span>GitHub</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </motion.a>
 
-            {/* LeetCode Link */}
-            <motion.a
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              href="https://leetcode.com/u/Anurajmane02/"
-              target="_blank"
-              rel="noreferrer"
-              className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
-            >
-              <span>LeetCode</span>
-              <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </motion.a>
-          </motion.div>
+              {/* LeetCode Link */}
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                href="https://leetcode.com/u/Anurajmane02/"
+                target="_blank"
+                rel="noreferrer"
+                className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+              >
+                <SiLeetcode className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+                <span>LeetCode</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </motion.a>
+              {/* LinkedIn Link */}
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                href="https://leetcode.com/u/Anurajmane02/"
+                target="_blank"
+                rel="noreferrer"
+                className="group theme-text-secondary theme-surface theme-border inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium shadow-xs transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)] hover:shadow-md"
+              >
+                <FaLinkedin className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+                <span>LinkedIn</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </motion.a>
+            </motion.div>
+          </div>
 
         </div>
 
         {/* Copyright */}
         <div className="theme-border theme-text-muted flex flex-col items-center justify-between gap-2 border-t py-6 text-center text-xs sm:flex-row">
-          <p>© {currentYear} DailyCode. Built with React & Tailwind CSS.</p>
+          <p>© {currentYear} DailyCode. Anuraj Mane.</p>
           <p className="flex items-center gap-1 opacity-80">
             <span>Crafted for problem solvers</span>
             <Heart className="h-3 w-3 text-rose-500 fill-rose-500 animate-pulse" />
