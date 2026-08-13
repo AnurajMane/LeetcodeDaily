@@ -1,5 +1,5 @@
 ---
-id: 2996
+id: 3
 title: Smallest Missing Integer Greater Than Sequential Prefix Sum
 slug: Smallest-Missing-Integer-Greater-Than-Sequential-Prefix-Sum
 difficulty: Easy
