@@ -2,14 +2,14 @@
 id: 4/2958
 title: Length of Longest Subarray With at Most K Frequency
 slug: Length-of-Longest-Subarray-With-at-Most-K-Frequency
-difficulty: Easy
+difficulty: Medium
 date: 2026-08-12
 topics:
   - Array
   - HashTable
   - HashMap
   - Sorting
-language: 
+language:
   - Java
   - C++
 leetcodeUrl: https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
