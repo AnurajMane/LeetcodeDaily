@@ -162,7 +162,7 @@ public:
 ## Complexity
 
 ```text
-Time: O(n^2) - nested loops * checkPalindrome()
+Time: O(n^2 * n/2) - nested loops * checkPalindrome()
 
 Space: O(n^2) - because we are preoccupying the space for all
 
@@ -170,11 +170,11 @@ Space: O(n^2) - because we are preoccupying the space for all
 
 #### This could have solved with Expand Arround Centre approach so that can eliminate DP of O(n^2)
 
-The Expand Around Center approach eliminates dynamic programming's $\mathcal{O}(N^2)$ space overhead by considering each character (and character pair) as a potential center and growing outward as long as matching characters are found.
+The Expand Around Center approach eliminates dynamic programming's O(N^2) space overhead by considering each character (and character pair) as a potential center and growing outward as long as matching characters are found.
 
 Since palindromes read the same forward and backward, every palindrome expands symmetrically around a center:
  - Odd-length palindromes have $1$ center character (e.g., "aba" centered at 'b').
- - Even-length palindromes have $2$ center characters (e.g., "abba" centered between 'b' and 'b').With $N$ characters, there are $2N - 1$ total centers ($N$ single characters + $N - 1$ adjacent pairs).
+ - Even-length palindromes have 2 center characters (e.g., "abba" centered between 'b' and 'b').With N characters, there are 2N - 1 total centers (N single characters + N - 1 adjacent pairs).
 
  ```cpp
 class Solution {
